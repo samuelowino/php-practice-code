@@ -1,13 +1,19 @@
 <?php 
     class NotesServiceImpl implements NoteService{
         
+        private NotesRepository $notesRepository;
+
+        public function __construct(){
+            $notesRepository = new NotesRepository();
+        }
+
         /**
          * Create a new note
          * @param $Note
          * 
          */
-        public function createNote($Note){
-
+        public function createNote(Note $note){
+            $this->notesRepository->create($note);
         }
 
         /**
@@ -16,7 +22,7 @@
          * 
          */
         public function deleteNote($id){
-
+            $this->notesRepository->delete($id);
         }
 
         /**
@@ -24,7 +30,7 @@
          * @param $ownerEmail
          */
         public function getOwnerNotes($ownerEmail){
-
+            $this->notesRepository->getByUserEmail($ownerEmail);
         }
 
         /**
@@ -32,7 +38,7 @@
          *
          */
         public function getAllNotes(){
-
+            $this->notesRepository->getAllNotes();
         }
     }
 ?>
