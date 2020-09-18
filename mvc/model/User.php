@@ -19,6 +19,14 @@
             $this->id = $id;
         }
 
+        public function getFirstName(){
+            return $this->firstName;
+        }
+
+        public function setFirstName($firstName){
+            $this->firstName = $firstName;
+        }
+
         public function setLastName($lastName){
             $this->lastName = $lastName;
         }
@@ -35,12 +43,20 @@
             return $this->email;
         }
 
-        public function setPhoneNumber(){
+        public function setPhoneNumber($phoneNumber){
+            return $this->phoneNumber = $phoneNumber;
+        }
+
+        public function getPhoneNumber(){
             return $this->phoneNumber;
         }
 
         public function setPassword($password){
             $this->password = $password;
+        }
+
+        public function getPassword(){
+            return $this->password;
         }
 
         public function toString(){
