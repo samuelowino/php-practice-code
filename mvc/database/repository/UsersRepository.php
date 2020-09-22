@@ -66,6 +66,10 @@
             return $exists;
         }
 
+        public function findByEmail(){
+            
+        }
+
         public function getConnection(){
             $connection = $this->connector->dbConnect();
             return $connection;

@@ -6,7 +6,7 @@
          * @param $Note
          * 
          */
-        public function createNote($Note);
+        public function createNote(Note $note);
 
         /**
          * Delete existing note

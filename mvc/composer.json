@@ -1,0 +1,15 @@
+{
+    "name": "hp/mvc",
+    "type": "project",
+    "require": {
+        "illuminate/support": "^7.0.0",
+        "dingo/api": "^3.0",
+        "tymon/jwt-auth": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "'samuelowino'",
+            "email": "samuelowino43@yahoo.com"
+        }
+    ]
+}

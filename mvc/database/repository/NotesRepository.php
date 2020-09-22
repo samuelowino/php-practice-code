@@ -1,10 +1,9 @@
 <?php
     class NotesRepository implements CrudeRepository{
         
-        CONST TABLE_NAME = "notes_tb";
         private DatabaseContract $connector;
 
-        public function __constructor(){
+        public function __construct(){
             $this->connector = new DatabaseContract();
         }
         
@@ -14,7 +13,7 @@
          * @param $entity - Generic entity
          */
         public function create($entity){
-            $connection = $this->connector->dbConnect();
+            $connection = $this->getConnection();
             $this->connector->insertNote($entity, $connection);
         }
 
@@ -24,7 +23,8 @@
          * 
          */
         public function findByOneById($id){
-            $this->connector->findNoteById($id);
+            $connection = $this->getConnection();
+            $this->connector->findNoteById($id, $connection);
         }
 
         /**
@@ -32,7 +32,8 @@
          * 
          */
         public function findAll(){
-            $this->connector->findAllNotes($id);
+            $connection = $this->getConnection();
+            $this->connector->findAllNotes($connection);
         }
 
         /**
@@ -42,8 +43,9 @@
          * @param $entity
          * 
          */
-        public function update($id, $entity){
-            $this->connector->updateNote($id, $entity);
+        public function update($id,$entity){
+            $connection = $this->getConnection();
+            $this->connector->updateNote($id,$entity, $connection);
         }
 
         /**
@@ -51,7 +53,8 @@
          * @param $id
          */
         public function delete($id){
-            $this->connector->deleteNote($id);
+            $connection = $this->getConnection();
+            $this->connector->deleteNote($id, $connection);
         }
 
         /**
@@ -59,7 +62,18 @@
          * 
          */
         public function existsById($id){
-            $this->connector->notesExistsById($id);
+            $connection = $this->getConnection();
+            $this->connector->notesExistsById($id, $connection);
+        }
+
+        public function findByUserEmail($ownerEmail){
+            $connection = $this->getConnection();
+            $this->connector->getNoteByOwnerEmail($ownerEmail);
+        }
+
+        public function getConnection(){
+            $connection = $this->connector->dbConnect();
+            return $connection;
         }
     }
 ?>

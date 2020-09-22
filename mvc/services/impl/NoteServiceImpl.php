@@ -30,7 +30,9 @@
          * @param $ownerEmail
          */
         public function getOwnerNotes($ownerEmail){
-            $this->notesRepository->getByUserEmail($ownerEmail);
+            $note = new Note();
+            $note = $this->notesRepository->findByUserId($ownerEmail);
+            return $note;
         }
 
         /**
@@ -38,7 +40,9 @@
          *
          */
         public function getAllNotes(){
-            $this->notesRepository->getAllNotes();
+           $notes = array();
+           $notes = $this->notesRepository->findAll();
+           return $notes;
         }
     }
 ?>

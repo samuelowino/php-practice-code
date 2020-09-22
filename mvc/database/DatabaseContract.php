@@ -251,6 +251,12 @@
             return $exists;
         }
 
+        public function deleteUserByEmail($email, mysqli $connection){
+            $sql = "DELETE FROM ".self::USERS_TABLE_NAME
+            ." WHERE email = ".$email;
+            $connection->query($sql);
+        }
+
 
     }
 ?>

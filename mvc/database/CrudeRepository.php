@@ -39,5 +39,11 @@
          * 
          */
         public function existsById($id);
+
+        /**
+         * Obtains a singletone connection if one has not
+         * already been created
+         */
+        public function getConnection();
     }
 ?>

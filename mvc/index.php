@@ -10,7 +10,7 @@
     <body>
         <p>Welcome to Nebula Notes App</p>
         <p>Sign up to Proceed</p>
-        <span><a href="#">Register</a></span>
-        <span><a href="#">Alreay have an account? Sign in</a></span>
+        <span><a href="#">Register</a></span><br/>
+        <span><a href="#">Alreay have an account? Sign in</a></span><br/>
     </body>
 </html>
