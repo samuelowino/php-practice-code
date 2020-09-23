@@ -1,6 +1,6 @@
 {
-    "name": "illuminate/container",
-    "description": "The Illuminate Container package.",
+    "name": "illuminate/events",
+    "description": "The Illuminate Events package.",
     "license": "MIT",
     "homepage": "https://laravel.com",
     "support": {
@@ -15,12 +15,13 @@
     ],
     "require": {
         "php": "^7.2.5",
+        "illuminate/container": "^7.0",
         "illuminate/contracts": "^7.0",
-        "psr/container": "^1.0"
+        "illuminate/support": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "Illuminate\\Container\\": ""
+            "Illuminate\\Events\\": ""
         }
     },
     "extra": {

@@ -1,15 +1,20 @@
 {
-    "name": "hp/mvc",
+    "name": "phppractice/mvc",
+    "description":"PHP practice code for the mvc design pattern",
     "type": "project",
     "require": {
         "illuminate/support": "^7.0.0",
         "dingo/api": "^3.0",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "illuminate/events": "7.0.0"
     },
     "authors": [
         {
             "name": "'samuelowino'",
             "email": "samuelowino43@yahoo.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "illuminate/container": "7.0.0"
+    }
 }

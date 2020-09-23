@@ -1,4 +1,8 @@
 <?php
+
+    require('../CrudeRepository.php');
+    require('../DatabaseContract.php');
+
     class NotesRepository implements CrudeRepository{
         
         private DatabaseContract $connector;
@@ -66,9 +70,11 @@
             $this->connector->notesExistsById($id, $connection);
         }
 
-        public function findByUserEmail($ownerEmail){
+        public function findByUserId($ownerId){
+            $note = new Note();
             $connection = $this->getConnection();
-            $this->connector->getNoteByOwnerEmail($ownerEmail);
+            $note = $this->connector->getNotesByOwnerId($connection, $ownerId);
+            return $note;
         }
 
         public function getConnection(){

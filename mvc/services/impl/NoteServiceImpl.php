@@ -1,9 +1,16 @@
 <?php 
-    class NotesServiceImpl implements NoteService{
+    require('../../database/CrudeRepository.php');
+    require('../../database/DatabaseContract.php');
+    require('../../database/repository/NotesRepository.php');
+    require('../NoteService.php');
+
+
+    class NoteServiceImpl implements NoteService{
         
         private NotesRepository $notesRepository;
 
         public function __construct(){
+            echo "NotesServiceImpl instantiated";
             $notesRepository = new NotesRepository();
         }
 

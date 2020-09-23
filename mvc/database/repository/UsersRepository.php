@@ -1,4 +1,8 @@
 <?php
+
+    require('../CrudeRepository.php');
+    require('../DatabaseContract.php');
+
     class UserRepository implements CrudeRepository {
         
         private DatabaseContract $connector;
@@ -64,6 +68,11 @@
             $connection = $this->getConnection();
             $exists = $this->connector->userExistsById($id,$connection);
             return $exists;
+        }
+
+        public function deleteUserByEmail($email){
+            $connection = $this->getConnection();
+            $this->connector->deleteUserByEmail($email, $connection);
         }
 
         public function findByEmail(){

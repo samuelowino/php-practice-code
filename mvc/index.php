@@ -1,6 +1,13 @@
 <?php
-    include '/views/UserView.php';
-    include '/views/NotesView.php';
+    require('services/NoteService.php');
+    require('services/UserService.php');
+    require('services/impl/NoteServiceImpl.php');
+    require('services/impl/UserServiceImpl.php');
+
+    $userService = new UserServiceImpl();
+    $notesService = new NoteServiceImpl();
+
+
 ?>
 
 <html>

@@ -10,6 +10,10 @@
         private CONST NOTES_TABLE_NAME = "notes_tb";
         private CONST USERS_TABLE_NAME = "users_tb";
 
+        function __construct()
+        {
+            echo "Database contract instatiated";
+        }
 
         public function dbConnect(){
             if(is_null($this->connection)){
@@ -147,6 +151,25 @@
             }
 
             return $exists;
+        }
+
+        public function getNotesByOwnerId(mysqli $connection, $ownerId){
+            $note = new Note();
+
+            $sql = "SELECT * FROM ".self::NOTES_TABLE_NAME
+            ." WHERE ownerId = ".$ownerId;
+            $cursor = $connection->query($sql);
+            if($cursor->num_rows > 0){
+                while($row = $cursor->fetch_assoc){
+                    $note->setId($row["id"]);
+                    $note->setOwnerId($row["ownerId"]);
+                    $note->setCreated($row["created"]);
+                    $note->setTitle($row["title"]);
+                    $note->setBody($row["body"]);
+                }
+            }
+
+            return $note;
         }
 
         /**

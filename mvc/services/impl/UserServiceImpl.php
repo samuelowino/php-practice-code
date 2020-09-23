@@ -1,9 +1,16 @@
 <?php 
+
+    require('../../database/DatabaseContract.php');
+    require('../../database/CrudeRepository.php');
+    require('../UserService.php');
+    require('../../database/repository/UsersRepository.php');
+
     class UserServiceImpl implements UserService {
 
         private UserRepository $userRepository;
 
         public function __construct(){
+            echo "User service instantiated";
             $this->connector = new DatabaseContract();
         }
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f5723b646b3584f2475e024d99ba071",
+    "content-hash": "ca6a1cb40b21eb7c7cac9569edbcd152",
     "packages": [
         {
             "name": "brick/math",
@@ -540,25 +540,22 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.28.3",
+            "version": "v7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "c0d892450f12ed22e4d8f7bec647230d0be8405b"
+                "reference": "d11bae50ad72a4522c13d8c46a24f83f6e7beec4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/c0d892450f12ed22e4d8f7bec647230d0be8405b",
-                "reference": "c0d892450f12ed22e4d8f7bec647230d0be8405b",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/d11bae50ad72a4522c13d8c46a24f83f6e7beec4",
+                "reference": "d11bae50ad72a4522c13d8c46a24f83f6e7beec4",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^7.0",
                 "php": "^7.2.5",
                 "psr/container": "^1.0"
-            },
-            "provide": {
-                "psr/container-implementation": "1.0"
             },
             "type": "library",
             "extra": {
@@ -583,7 +580,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2020-08-13T14:33:41+00:00"
+            "time": "2020-03-02T15:52:51+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -690,6 +687,51 @@
                 "sql"
             ],
             "time": "2020-09-08T11:21:46+00:00"
+        },
+        {
+            "name": "illuminate/events",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/events.git",
+                "reference": "442fd9cdbacc0732eea4018bc1f0df7e4004b8e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/442fd9cdbacc0732eea4018bc1f0df7e4004b8e8",
+                "reference": "442fd9cdbacc0732eea4018bc1f0df7e4004b8e8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "^7.0",
+                "illuminate/contracts": "^7.0",
+                "illuminate/support": "^7.0",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Events\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Events package.",
+            "homepage": "https://laravel.com",
+            "time": "2020-02-11T22:47:28+00:00"
         },
         {
             "name": "illuminate/filesystem",
