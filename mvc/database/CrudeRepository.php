@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\database;
+
     interface CrudeRepository{
 
         /**

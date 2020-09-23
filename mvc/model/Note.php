@@ -2,6 +2,7 @@
     /**
      * Note model, POPO object
      */
+    namespace App\model;
 
     class Note{
         private $id;

@@ -1,4 +1,8 @@
 <?php 
+
+    use App\model\Note;
+    use App\model\User;
+
     class DatabaseContract{
         private mysqli $connection;
         private $database_name = "nebula_notes_db";

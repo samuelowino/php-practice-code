@@ -1,4 +1,7 @@
 <?php 
+
+    use App\model\Note;
+
     interface NoteService {
 
         /**

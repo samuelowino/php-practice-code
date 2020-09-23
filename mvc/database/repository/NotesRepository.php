@@ -1,7 +1,8 @@
 <?php
 
-    require('../CrudeRepository.php');
-    require('../DatabaseContract.php');
+    use App\model\Note;
+
+    namespace App\database;
 
     class NotesRepository implements CrudeRepository{
         

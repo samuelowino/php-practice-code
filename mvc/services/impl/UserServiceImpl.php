@@ -1,9 +1,6 @@
 <?php 
 
-    require('../../database/DatabaseContract.php');
-    require('../../database/CrudeRepository.php');
-    require('../UserService.php');
-    require('../../database/repository/UsersRepository.php');
+    use App\model\User;
 
     class UserServiceImpl implements UserService {
 

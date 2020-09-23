@@ -1,9 +1,7 @@
 <?php 
-    require('../../database/CrudeRepository.php');
-    require('../../database/DatabaseContract.php');
-    require('../../database/repository/NotesRepository.php');
-    require('../NoteService.php');
-
+    
+    use App\model\Note;
+    use App\model\User;
 
     class NoteServiceImpl implements NoteService{
         

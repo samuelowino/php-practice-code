@@ -1,8 +1,5 @@
 <?php
 
-    require('../CrudeRepository.php');
-    require('../DatabaseContract.php');
-
     class UserRepository implements CrudeRepository {
         
         private DatabaseContract $connector;
