@@ -1,6 +1,9 @@
 <?php 
 
+    namespace App\service;
     use App\model\User;
+    use App\database\DatabaseContract;
+    use App\database\UserRepository;
 
     class UserServiceImpl implements UserService {
 

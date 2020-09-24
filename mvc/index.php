@@ -1,12 +1,11 @@
 <?php
-    require('services/NoteService.php');
-    require('services/UserService.php');
-    require('services/impl/NoteServiceImpl.php');
-    require('services/impl/UserServiceImpl.php');
+
+    namespace App;
+    use App\service\NoteServiceImpl;
+    use App\service\UserServiceImpl;
 
     $userService = new UserServiceImpl();
     $notesService = new NoteServiceImpl();
-
 
 ?>
 

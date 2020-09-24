@@ -1,6 +1,6 @@
 {
-    "name": "phppractice/mvc",
-    "description":"PHP practice code for the mvc design pattern",
+    "name": "minified/mvc",
+    "description":"Minified version of the mvc sample code",
     "type": "project",
     "require": {
         "illuminate/support": "^7.0.0",
@@ -20,7 +20,7 @@
 
     "autoload":{
         "psr-4": {
-            
+            "App\\" : "app"
         }
     }
 }

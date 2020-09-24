@@ -1,10 +1,11 @@
 <?php 
 
+    namespace App\database;
     use App\model\Note;
     use App\model\User;
 
     class DatabaseContract{
-        private mysqli $connection;
+        private \mysqli $connection;
         private $database_name = "nebula_notes_db";
         private $host = "localhost";
         private $port = "3306";
@@ -21,14 +22,14 @@
 
         public function dbConnect(){
             if(is_null($this->connection)){
-                $this->connection = new mysqli($this->host, 
+                $this->connection = new \mysqli($this->host, 
                 $this->username, 
                 $this->password);
             }
             return $this->connection;
         }
 
-        public function createNotesTable(mysqli $connection){
+        public function createNotesTable(\mysqli $connection){
             $sql = "CREATE TABLE IF NOT EXISTS "
             .self::NOTES_TABLE_NAME 
             ." (id int(11),"
@@ -40,7 +41,7 @@
             $connection->close();
         }
 
-        public function createUsersTable(mysqli $connection){
+        public function createUsersTable(\mysqli $connection){
             $sql = "CREATE TABLE IF NOT EXISTS "
             .self::USERS_TABLE_NAME
             ." (id int(11), "
@@ -54,7 +55,7 @@
             $connection->close();
         }
 
-        public function createDatabaseIfNeccessary(mysqli $connection){
+        public function createDatabaseIfNeccessary(\mysqli $connection){
             $sql = "CREATE DATABASE IF NOT EXISTS ".$this->database_name;
             $connection->query($sql);
             $connection->close();
@@ -66,7 +67,7 @@
          * =======================
          */
 
-        public function insertNote(Note $entity, mysqli $connection){
+        public function insertNote($entity, \mysqli $connection){
             $id = $entity->getId();
             $ownerId = $entity->getOwnerId();
             $created = $entity->getCreated();
@@ -81,7 +82,7 @@
             $connection->query($sql);
         }
 
-        public function findNoteById($id, mysqli $connection){
+        public function findNoteById($id, \mysqli $connection){
 
             $note = new Note();
 
@@ -103,7 +104,7 @@
             }
         }
 
-        public function findAllNotes(mysqli $connection){
+        public function findAllNotes(\mysqli $connection){
             $notes = array();
 
             $sql = "SELECT * FROM ".self::NOTES_TABLE_NAME;
@@ -134,14 +135,14 @@
             $connection->query($sql);
         }
 
-        public function deleteNote($id, mysqli $connection){
+        public function deleteNote($id, \mysqli $connection){
             $sql = "DELETE FROM ".self::NOTES_TABLE_NAME
             ." WHERE id = ".$id
             .";";
             $connection->query($sql);
         }
 
-        public function notesExistsById($id,mysqli $connection){
+        public function notesExistsById($id,\mysqli $connection){
             $exists = false;
             
             $sql = "SELECT COUNT(*) AS total FROM "
@@ -157,7 +158,7 @@
             return $exists;
         }
 
-        public function getNotesByOwnerId(mysqli $connection, $ownerId){
+        public function getNotesByOwnerId(\mysqli $connection, $ownerId){
             $note = new Note();
 
             $sql = "SELECT * FROM ".self::NOTES_TABLE_NAME
@@ -183,7 +184,7 @@
          */
 
 
-        public function insertUser(User $entity,mysqli $connection){
+        public function insertUser(User $entity,\mysqli $connection){
             $sql = "INSERT INTO ".self::USERS_TABLE_NAME
             ."VALUES ("
             .$entity->getId()
@@ -203,7 +204,7 @@
         
         }
 
-        public function findByUserById($id, mysqli $connection){
+        public function findByUserById($id, \mysqli $connection){
             $user = new User();
             $sql = "SELECT * FROM ".self::USERS_TABLE_NAME
             ." WHERE id = ".$id;
@@ -222,7 +223,7 @@
             }
         }
 
-        public function findAllUsers(mysqli $connection){
+        public function findAllUsers(\mysqli $connection){
             $users = array();
             $sql = "SELECT * FROM ".self::USERS_TABLE_NAME;
             $cursor = $connection->query($sql);
@@ -242,7 +243,7 @@
             return $users;
         }
 
-        public function updateUser($id, User $entity, mysqli $connection){
+        public function updateUser($id, User $entity, \mysqli $connection){
             $sql = "UPDATE TABLE ".self::USERS_TABLE_NAME
             ." SET first_name = ".$entity->getFirstName().","
             ."last_name = ".$entity->getLastName()
@@ -255,14 +256,14 @@
             $connection->query($sql);
         }
 
-        public function deleteUser($id, mysqli $connection){
+        public function deleteUser($id, \mysqli $connection){
             $sql = "DELETE FROM ".self::USERS_TABLE_NAME
             ." WHERE id = ".$id;
             $connection->query($sql);
         }
 
 
-        public function userExistsById($id,mysqli $connection){
+        public function userExistsById($id,\mysqli $connection){
             $exists = false;
             
             $sql = "SELECT COUNT(*) AS total FROM "
@@ -278,7 +279,7 @@
             return $exists;
         }
 
-        public function deleteUserByEmail($email, mysqli $connection){
+        public function deleteUserByEmail($email, \mysqli $connection){
             $sql = "DELETE FROM ".self::USERS_TABLE_NAME
             ." WHERE email = ".$email;
             $connection->query($sql);

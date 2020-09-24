@@ -3,6 +3,8 @@
      * User model, POPO object
      */
     
+    namespace App\model;
+
     class User{
         private $id;
         private $firstName;

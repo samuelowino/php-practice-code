@@ -1,8 +1,9 @@
 <?php 
     
+    namespace App\service;
     use App\model\Note;
-    use App\model\User;
-
+    use App\database\NotesRepository;
+    
     class NoteServiceImpl implements NoteService{
         
         private NotesRepository $notesRepository;

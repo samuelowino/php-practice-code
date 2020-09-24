@@ -1,8 +1,8 @@
 <?php
 
-    use App\model\Note;
 
     namespace App\database;
+    use App\database\CrudeRepository;
 
     class NotesRepository implements CrudeRepository{
         
@@ -72,7 +72,7 @@
         }
 
         public function findByUserId($ownerId){
-            $note = new Note();
+            $note = null;
             $connection = $this->getConnection();
             $note = $this->connector->getNotesByOwnerId($connection, $ownerId);
             return $note;

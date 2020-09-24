@@ -1,5 +1,6 @@
 <?php 
 
+    namespace App\service;
     use App\model\Note;
 
     interface NoteService {
