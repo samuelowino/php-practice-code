@@ -1,11 +1,8 @@
 <?php
+    require("vendor/autoload.php");
 
-    namespace App;
-    use App\service\NoteServiceImpl;
-    use App\service\UserServiceImpl;
-
-    $userService = new UserServiceImpl();
-    $notesService = new NoteServiceImpl();
+    $userService = new App\Services\Impl\UserServiceImpl();
+    $notesService = new App\Services\Impl\NoteServiceImpl();
 
 ?>
 
