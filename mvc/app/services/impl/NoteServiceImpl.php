@@ -3,7 +3,7 @@
     namespace App\Services\Impl;
 
     use App\Services\NoteService;
-    use App\Database\NotesRepository;
+    use App\Database\Repository\NotesRepository;
     use App\Model\Note;
     
     class NoteServiceImpl implements NoteService{

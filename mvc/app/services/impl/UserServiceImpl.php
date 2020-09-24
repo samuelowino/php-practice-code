@@ -1,8 +1,8 @@
 <?php 
-
     namespace App\Services\Impl;
+    use App\Model\User;
     use App\Services\UserService;
-    use App\Database\UserRepository;
+    use App\Database\Repository\UserRepository;
     use App\Database\DatabaseContract;
 
     class UserServiceImpl implements UserService {
@@ -10,8 +10,9 @@
         private UserRepository $userRepository;
 
         public function __construct(){
-            echo "User service instantiated";
+            echo "\nUser service instantiated";
             $this->connector = new DatabaseContract();
+            $userRepository = new UserRepository();
         }
 
         /**
@@ -20,8 +21,10 @@
          * @param $user
          * 
          */
-        public function registerUser($user){
-            $this->userRepository->create($user);
+        public function registerUser(User $user){
+            echo "\n\n__User service create user ".$user->toString();
+            $userRepository = new UserRepository();
+            $userRepository->create($user);
         }
 
         /**

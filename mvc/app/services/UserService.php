@@ -1,7 +1,8 @@
 <?php
 
     namespace App\Services;
-    
+    use App\Model\User;
+
     interface UserService{
 
         /**
@@ -10,7 +11,7 @@
          * @param $user
          * 
          */
-        public function registerUser($user);
+        public function registerUser(User $user);
 
         /**
          * Sign in returning user

@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\database;
+    namespace App\Database;
 
     interface CrudeRepository{
 

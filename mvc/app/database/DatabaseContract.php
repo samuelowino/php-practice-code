@@ -17,15 +17,17 @@
 
         function __construct()
         {
-            echo "Database contract instatiated";
+            echo "__Database contract instatiated__";
         }
 
         public function dbConnect(){
-            if(is_null($this->connection)){
-                $this->connection = new \mysqli($this->host, 
-                $this->username, 
-                $this->password);
-            }
+            echo "\n__Connecting to db...\n";
+            echo "__mysqli connection is null... connecting...";
+            $this->connection = new \mysqli($this->host, 
+            $this->username, 
+            $this->password);
+        
+            echo "__ completed connection creation__";
             return $this->connection;
         }
 
@@ -185,6 +187,8 @@
 
 
         public function insertUser(User $entity,\mysqli $connection){
+            echo "Database contract insert user ".$entity;
+            
             $sql = "INSERT INTO ".self::USERS_TABLE_NAME
             ."VALUES ("
             .$entity->getId()

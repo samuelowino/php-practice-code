@@ -10,6 +10,7 @@
         private DatabaseContract $connector;
 
         public function __construct(){
+            echo "__ init__ UserRepository__";
             $this->connector = new DatabaseContract();
         }
         
@@ -19,6 +20,7 @@
          * @param $entity - Generic entity
          */
         public function create($entity){
+            echo "\n\n__User repository create user ".$entity->toString();
             $connection = $this->getConnection();
             $this->connector->insertUser($entity, $connection);
         }
@@ -82,6 +84,7 @@
         }
 
         public function getConnection(){
+            echo " __User repository getConnection__";
             $connection = $this->connector->dbConnect();
             return $connection;
         }
