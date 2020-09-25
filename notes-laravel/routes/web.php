@@ -25,11 +25,15 @@ Route::get('/login', function(){
     return view('login');
 });
 
-Route::post('/signin', function(){
-    return view('');
+Route::get('/signin', function(){
+    return view('login');
 });
 
-Route::post('register', function(){
-    return view('');
+Route::get('about', function(){
+    return view('about');
+});
+
+Route::get('company/signup', function(){
+    return view('company-signup');
 });
 

@@ -53,15 +53,15 @@
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="/register" role="tab" aria-controls="home" aria-selected="true">Individual</a>
+                                <a class="nav-link" id="home-tab" data-toggle="tab" href="/register" role="tab" aria-controls="home" aria-selected="false">Individual</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="/company/signup" role="tab" aria-controls="profile" aria-selected="false">Organization</a>
+                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="/company/signup" role="tab" aria-controls="profile" aria-selected="true">Organization</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Apply as an Individual</h3>
+                                <h3 class="register-heading">Apply as Organization</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
